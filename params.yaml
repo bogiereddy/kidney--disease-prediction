@@ -1,0 +1,11 @@
+AUGMENTATION: False
+IMAGE_SIZE: [224, 224, 3] # as per VGG 16 model
+BATCH_SIZE: 16
+INCLUDE_TOP: False # it extracts the features from the image. not the classes.
+EPOCHS: 2
+CLASSES: 2
+WEIGHTS: imagenet
+LEARNING_RATE: 0.01
+
+# features extra by vgg16 from image :edges,shapes,textures,patterns
+# add  to our dense layer and train the model for our classes

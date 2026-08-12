@@ -1,7 +1,7 @@
 # Virtual Environment
 .venv/
 venv/
-env/
+.env/
 
 # Python cache
 __pycache__/
@@ -27,6 +27,7 @@ models/*.pkl
 *.h5
 *.keras
 *.pt
+research/Kidney-CT-Scan-data.zip
 
 # DVC cache
 .dvc/cache/

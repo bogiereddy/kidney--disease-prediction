@@ -2,6 +2,7 @@ import tensorflow as tf
 from pathlib import Path
 import mlflow
 import mlflow.keras
+import dagshub
 from urllib.parse import urlparse
 from Cnnclassifier.entity.config_entity import EvaluationConfig
 from Cnnclassifier.utils.common import read_yaml, create_directories,save_json
@@ -53,7 +54,12 @@ class Evaluation:
 
     
     def log_into_mlflow(self):
-
+        dagshub.init(
+            repo_owner="bogiereddy",
+            repo_name="kidney--disease-prediction",
+            mlflow=True,
+            dvc=False
+        )
         mlflow.set_tracking_uri(self.config.mlflow_uri)
         mlflow.set_registry_uri(self.config.mlflow_uri)
 

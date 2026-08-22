@@ -34,7 +34,7 @@ class Training:
 
         datagenerator_kwargs = dict(
             rescale = 1./255,
-            validation_split=0.20
+            validation_split=0.30
         )
 
         dataflow_kwargs = dict(
@@ -56,12 +56,12 @@ class Training:
 
         if self.config.params_is_augmentation:
             train_datagenerator = tf.keras.preprocessing.image.ImageDataGenerator(
-                rotation_range=40,
+                rotation_range=15,
                 horizontal_flip=True,
-                width_shift_range=0.2,
-                height_shift_range=0.2,
-                shear_range=0.2,
-                zoom_range=0.2,
+                width_shift_range=0.10,
+                height_shift_range=0.10,
+                shear_range=0.10,
+                zoom_range=0.10,
                 **datagenerator_kwargs
             )
         else:
